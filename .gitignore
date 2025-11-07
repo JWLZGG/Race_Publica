@@ -1,18 +1,12 @@
-# Python
-__pycache__/
-*.pyc
-.venv/
-.env
-# Jupyter
-.ipynb_checkpoints/
-# Data
-data/*.tif
-data/*.tiff
-data/*.zip
-data/*.gpkg
-data/*.csv
-# keep small demo files tracked:
-!data/*.geojson
-# OS / IDE
+# macOS
 .DS_Store
-.vscode/
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+.env
+# Node
+node_modules/
+# Rust
+target/
+# Misc
+*.log
