@@ -1,12 +1,12 @@
-1-Page “Software Architecture & Data Flow” for Race_Publica
+# Race_Publica — Software Architecture & Data Flow
 
- Race_Publica — Software Architecture & Data Flow
-
-Mission:
-Create a gamified navigation layer for Berlin’s waterways using Copernicus and Galileo data.
+## Mission
+Create a gamified navigation layer for Berlin’s waterways using Copernicus and Galileo data.  
 Participants (vessels, tourists, operators) earn Civic Credits for eco-friendly routes that reduce congestion and environmental stress.
 
-## 🧩 System Overview
+---
+
+## System Overview
 ```text
 ┌──────────────────────┐
 │ Copernicus Data Space│  ← Satellite imagery (Sentinel-2/3)
@@ -34,7 +34,7 @@ Participants (vessels, tourists, operators) earn Civic Credits for eco-friendly 
 └──────────┬────────────────────┘
            ↓
 ┌───────────────────────────────┐
-│ Visualization Layer            │
+│ Visualization Layer           │
 │ - Jupyter + ipyleaflet maps   │
 │ - Streamlit / Plotly dashboard│
 │ - Leaderboard & Eco Index     │
@@ -45,31 +45,25 @@ Participants (vessels, tourists, operators) earn Civic Credits for eco-friendly 
 │ - Civic Credit engine (Python)│
 │ - Mock tokenization module    │
 └───────────────────────────────┘
- ```markdown
 
 
-## 🧠 Key Components & Libraries
+Key Components & Libraries
+Layer	Tools	Purpose
+Data Access	sentinelsat, Copernicus Data Space API	Download Sentinel-2 imagery for water analysis
+Geospatial Analysis	GeoPandas, Shapely, rasterio	Process waterways, zones, and vessel tracks
+Visualization (Prototype)	ipyleaflet, folium, plotly, matplotlib	Interactive maps and analytics inside Jupyter
+Visualization (MVP Web)	Streamlit, leafmap	Public-facing demo with scoring and leaderboard
+Data Storage	SQLite, CSV, JSON	Lightweight persistence
+Gamification Logic	Python modules	Civic Credit calculations, eco-score updates
+Version Control	GitHub	Collaboration and reproducibility
+Deployment (optional)	Streamlit Cloud	Free hosting for demo app
+Data Flow Description
 
-| Layer | Tools | Purpose |
-|-------|--------|----------|
-| **Data Access** | `sentinelsat`, Copernicus Data Space API | Download Sentinel-2 imagery for water analysis |
-| **Geospatial Analysis** | `GeoPandas`, `Shapely`, `rasterio` | Process waterways, zones, and vessel tracks |
-| **Visualization (Prototype)** | `ipyleaflet`, `folium`, `plotly`, `matplotlib` | Interactive maps & analytics inside Jupyter |
-| **Visualization (MVP Web)** | `Streamlit`, `leafmap` | Public-facing demo with scoring and leaderboard |
-| **Data Storage** | `SQLite`, `CSV`, `JSON` | Lightweight persistence |
-| **Gamification Logic** | Python functions | Civic Credit calculations, eco-score updates |
-| **Version Control** | GitHub | Collaboration and reproducibility |
-| **Deployment (optional)** | Streamlit Cloud | Free online hosting for demo app |
-
-
-
- Data Flow Description
-
-Ingest Copernicus Sentinel-2 imagery via API → clip to Berlin’s waterways.
+Ingest Copernicus Sentinel-2 imagery via API and clip to Berlin’s waterways.
 
 Import OpenStreetMap/GeoJSON shapefile for river geometry.
 
-Process raster and vector data to assign “sensitivity scores” to segments.
+Process raster and vector data to assign sensitivity scores to segments.
 
 Simulate Galileo-like vessel positions (synthetic data).
 
@@ -77,49 +71,15 @@ Score routes based on overlap with sensitive areas and timing (off-peak earns mo
 
 Store results in SQLite/CSV.
 
-Visualize dynamic map with ipyleaflet (for dev) and Streamlit (for demo).
+Visualize dynamic map with ipyleaflet (dev) and Streamlit (demo).
 
-Display leaderboard, total eco-credits, and district eco-index.
+Display leaderboard, total eco-credits and district eco-index.
 
-(Optional future step) Tokenize credits for interoperability with city systems.
+(Optional) Tokenize credits for interoperability with city systems.
 
- Development Roles
+Development Roles
 Role	Member	Focus
 Data Engineering & Ingestion	Pavlo	Copernicus data access, file structure
 Data Science / Scoring	Sahand	Rule logic, analytics, KPIs
-Technical Lead / PM	Jeremy	Architecture, visualization, gamification
-Frontend / UX (Ivan)	–	Streamlit/React UI, leaderboard polish
-
- Output of Hackathon MVP
-
-Streamlit web app hosted online.
-
-Interactive map (ipyleaflet → Streamlit).
-
-Three sample vessels with live score updates.
-
-Leaderboard & eco-score dashboard.
-
-Pitch deck + architecture diagram (this doc).
-
- Future Integration
-
-Replace simulated tracks with Galileo GNSS data from real vessels.
-
-Live telemetry via Kineis Satellite IoT network.
-
-Expand Civic Credits to blockchain-based eco-tokens.
-
-Integration with VisitBerlin for reward redemption.
-
- Quick Summary
-
-Stack: Python, GeoPandas, ipyleaflet, Streamlit, SQLite
-
-Data sources: Copernicus Sentinel-2/3, OSM waterways
-
-Output: gamified sustainability dashboard
-
-Value: transforms satellite data into a civic incentive engine# Race Publica
-
-Cassini Hackathon entry.
+Technical Lead / PM	Jeremy	Architecture, visualisation, gamification
+Frontend / UX (TBD)	–	Ivan
