@@ -1,12 +1,12 @@
 # macOS
 .DS_Store
-# Python / Jupyter
+# Python / Notebooks
+.venv/
 __pycache__/
 .ipynb_checkpoints/
-.env
+data/
+out/
 # Node
 node_modules/
 # Rust
 target/
-# Misc
-*.log

@@ -1,0 +1,12 @@
+geopandas
+shapely
+rasterio
+rioxarray
+xarray
+pystac-client
+sat-search
+stackstac
+folium
+leafmap
+typer
+streamlit
