@@ -45,9 +45,9 @@ Participants (vessels, tourists, operators) earn Civic Credits for eco-friendly 
 │ - Civic Credit engine (Python)│
 │ - Mock tokenization module    │
 └───────────────────────────────┘
-
-
  ```markdown
+
+
 ## 🧠 Key Components & Libraries
 
 | Layer | Tools | Purpose |
@@ -60,6 +60,7 @@ Participants (vessels, tourists, operators) earn Civic Credits for eco-friendly 
 | **Gamification Logic** | Python functions | Civic Credit calculations, eco-score updates |
 | **Version Control** | GitHub | Collaboration and reproducibility |
 | **Deployment (optional)** | Streamlit Cloud | Free online hosting for demo app |
+
 
 
  Data Flow Description
