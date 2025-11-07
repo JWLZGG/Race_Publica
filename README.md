@@ -6,7 +6,8 @@ Mission:
 Create a gamified navigation layer for Berlin’s waterways using Copernicus and Galileo data.
 Participants (vessels, tourists, operators) earn Civic Credits for eco-friendly routes that reduce congestion and environmental stress.
 
- System Overview
+## 🧩 System Overview
+```text
 ┌──────────────────────┐
 │ Copernicus Data Space│  ← Satellite imagery (Sentinel-2/3)
 └──────────┬───────────┘
@@ -45,16 +46,22 @@ Participants (vessels, tourists, operators) earn Civic Credits for eco-friendly 
 │ - Mock tokenization module    │
 └───────────────────────────────┘
 
- Key Components & Libraries
-Layer	Tools	Purpose
-Data Access	sentinelsat, Copernicus Data Space API	Download Sentinel-2 imagery for water analysis
-Geospatial Analysis	GeoPandas, Shapely, rasterio	Process waterways, zones and vessel tracks
-Visualization (Prototype)	ipyleaflet, folium, plotly, matplotlib	Interactive maps & analytics inside Jupyter
-Visualization (MVP Web)	Streamlit, leafmap	Public-facing demo with scoring and leaderboard
-Data Storage	SQLite, CSV, JSON	Lightweight persistence
-Gamification Logic	Python functions	Civic Credit calculations, eco-score updates
-Version Control	GitHub	Collaboration and reproducibility
-Deployment (optional)	Streamlit Cloud	Free online hosting for demo app
+
+ ```markdown
+## 🧠 Key Components & Libraries
+
+| Layer | Tools | Purpose |
+|-------|--------|----------|
+| **Data Access** | `sentinelsat`, Copernicus Data Space API | Download Sentinel-2 imagery for water analysis |
+| **Geospatial Analysis** | `GeoPandas`, `Shapely`, `rasterio` | Process waterways, zones, and vessel tracks |
+| **Visualization (Prototype)** | `ipyleaflet`, `folium`, `plotly`, `matplotlib` | Interactive maps & analytics inside Jupyter |
+| **Visualization (MVP Web)** | `Streamlit`, `leafmap` | Public-facing demo with scoring and leaderboard |
+| **Data Storage** | `SQLite`, `CSV`, `JSON` | Lightweight persistence |
+| **Gamification Logic** | Python functions | Civic Credit calculations, eco-score updates |
+| **Version Control** | GitHub | Collaboration and reproducibility |
+| **Deployment (optional)** | Streamlit Cloud | Free online hosting for demo app |
+
+
  Data Flow Description
 
 Ingest Copernicus Sentinel-2 imagery via API → clip to Berlin’s waterways.
