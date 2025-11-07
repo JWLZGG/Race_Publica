@@ -47,7 +47,7 @@ Participants (vessels, tourists, operators) earn Civic Credits for eco-friendly 
 └───────────────────────────────┘
 
 
-### Key Components & Libraries
+## Key Components & Libraries
 Layer	Tools	Purpose
 Data Access	sentinelsat, Copernicus Data Space API	Download Sentinel-2 imagery for water analysis
 Geospatial Analysis	GeoPandas, Shapely, rasterio	Process waterways, zones, and vessel tracks
