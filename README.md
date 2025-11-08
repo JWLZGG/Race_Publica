@@ -97,14 +97,16 @@ Participants (vessels, tourists, operators) earn Civic Credits for eco-friendly 
 
 ## 🧭 System Architecture (Mermaid Diagram)
 
+## 🧭 System Architecture (Mermaid Diagram)
+
 ```mermaid
 flowchart TD
-    A[Copernicus Data Space<br/>(Sentinel-2/3 imagery)] --> B[Data Ingestion Layer<br/>(Python, GeoPandas)]
-    B --> C[Processing & Scoring Engine<br/>(Eco-zones, Conflict Detection, Civic Credits)]
-    C --> D[Data Store<br/>(SQLite / CSV)]
-    D --> E[Visualization Layer<br/>(ipyleaflet / Streamlit Dashboard)]
-    E --> F[Gamification Logic<br/>(Leaderboard, Rewards)]
-    F --> G[End Users<br/>(Tourists, Operators, City Dashboard)]
+    A["Copernicus Data Space<br/>(Sentinel-2/3 imagery)"] --> B["Data Ingestion Layer<br/>(Python, GeoPandas)"]
+    B --> C["Processing & Scoring Engine<br/>(Eco-zones, Conflict Detection, Civic Credits)"]
+    C --> D["Data Store<br/>(SQLite / CSV)"]
+    D --> E["Visualization Layer<br/>(ipyleaflet / Streamlit)"]
+    E --> F["Gamification Logic<br/>(Leaderboard, Rewards)"]
+    F --> G["End Users<br/>(Tourists, Operators, City Dashboard)"]
 
     style A fill:#b3c7ff,stroke:#4466cc,stroke-width:1px,color:#000
     style B fill:#c2ffd4,stroke:#44aa55,stroke-width:1px,color:#000
