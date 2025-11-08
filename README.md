@@ -97,8 +97,6 @@ Participants (vessels, tourists, operators) earn Civic Credits for eco-friendly 
 
 ## 🧭 System Architecture (Mermaid Diagram)
 
-## 🧭 System Architecture (Mermaid Diagram)
-
 ```mermaid
 flowchart TD
     A["Copernicus Data Space<br/>(Sentinel-2/3 imagery)"] --> B["Data Ingestion Layer<br/>(Python, GeoPandas)"]
