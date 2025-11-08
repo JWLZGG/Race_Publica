@@ -90,7 +90,30 @@ Participants (vessels, tourists, operators) earn Civic Credits for eco-friendly 
 | **Data Engineering & Ingestion** | Pavlo | Copernicus data access, file structure |
 | **Data Science / Scoring** | Sahand | Rule logic, analytics, KPIs |
 | **Technical Lead / PM** | Jeremy | Architecture, founder, visualisation, gamification |
-| **Frontend / UX Ivan** | – | Streamlit/React UI, leaderboard polish |
+| **Frontend / UX ** | Ivan | Streamlit/React UI, leaderboard polish |
+
+
+---
+
+## 🧭 System Architecture (Mermaid Diagram)
+
+```mermaid
+flowchart TD
+    A[Copernicus Data Space<br/>(Sentinel-2/3 imagery)] --> B[Data Ingestion Layer<br/>(Python, GeoPandas)]
+    B --> C[Processing & Scoring Engine<br/>(Eco-zones, Conflict Detection, Civic Credits)]
+    C --> D[Data Store<br/>(SQLite / CSV)]
+    D --> E[Visualization Layer<br/>(ipyleaflet / Streamlit Dashboard)]
+    E --> F[Gamification Logic<br/>(Leaderboard, Rewards)]
+    F --> G[End Users<br/>(Tourists, Operators, City Dashboard)]
+
+    style A fill:#b3c7ff,stroke:#4466cc,stroke-width:1px,color:#000
+    style B fill:#c2ffd4,stroke:#44aa55,stroke-width:1px,color:#000
+    style C fill:#fff7b3,stroke:#ccaa44,stroke-width:1px,color:#000
+    style D fill:#ffe6b3,stroke:#cc8844,stroke-width:1px,color:#000
+    style E fill:#d0b3ff,stroke:#7744cc,stroke-width:1px,color:#000
+    style F fill:#ffd1dc,stroke:#cc4477,stroke-width:1px,color:#000
+    style G fill:#cccccc,stroke:#555555,stroke-width:1px,color:#000
+```
 
 
 ## Output of Hackathon MVP
