@@ -83,11 +83,15 @@ Participants (vessels, tourists, operators) earn Civic Credits for eco-friendly 
 
 ## Development Roles
 
-| **Role** | **Member** | **Version Control** |
-| **Technical Lead / PM** | Jeremy | Architecture, visualisation, gamification |
+## 🚀 Development Roles
+
+| Role | Member | Focus |
+|------|---------|--------|
 | **Data Engineering & Ingestion** | Pavlo | Copernicus data access, file structure |
 | **Data Science / Scoring** | Sahand | Rule logic, analytics, KPIs |
-| **Frontend** | Ivan | Streamlit |
+| **Technical Lead / PM** | Jeremy | Architecture, founder, visualisation, gamification |
+| **Frontend / UX Ivan** | – | Streamlit/React UI, leaderboard polish |
+
 
 ## Output of Hackathon MVP
 
