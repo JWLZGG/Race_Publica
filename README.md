@@ -163,6 +163,15 @@ Value: transforms satellite data into a civic incentive engine
 - Output visuals stored in [`screenshots/`](screenshots/)
 
 
+## 📊 Simulation Engine (Interactive Results)
+
+You can view the rendered output of the **Race_Publica Simulation Engine** notebook directly here:
+
+👉 [**Open simulation_engine.html**](notebooks/simulation_engine.html)
+
+This file contains the end-to-end environmental sensitivity scoring and NDWI-based simulation outputs used in the MVP.
+
+
 📄 **Full Simulation Notebook (with all outputs)**
 For reproducibility, the complete 135 MB notebook is archived here:
 https://drive.google.com/file/d/1t2Xd-vSUdSxlESOuQXcfBq7w6_mN4b6j/view?usp=sharing
