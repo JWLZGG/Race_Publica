@@ -1,0 +1,508 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+.header {
+    background: #1e293b;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0.2rem 0;
+    font-size: 1.8rem;
+}
+
+.header p {
+    margin: 0.3rem 0 0;
+    opacity: 0.8;
+    font-size: 1rem;
+}
+
+/* ✅ Unified container: card-style + full-height map */
+.container {
+    display: flex;
+    height: calc(100vh - 120px); /* account for header */
+    width: 100%;
+    background: white;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.map-container {
+    width: 75%;
+    height: 70vh;
+}
+
+.info-panel {
+    flex: 3; /* 30% */
+    height: 75%;
+    padding: 24px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow-y: auto;
+    border-left: 1px solid #e1e8f0;
+}
+
+/* Leaflet must fill its container
+.leaflet-container {
+    height: 100% !important;
+    width: 100% !important;
+}*/
+
+/* Map controls & route info
+.map-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+}*/
+
+/*.control-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #475569;
+}*/
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.checkbox input {
+    margin-right: 8px;
+}
+
+.checkbox label {
+    font-size: 13px;
+}
+
+/*.route-info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 300px;
+}*/
+
+.route-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1e293b;
+}
+
+.route-desc {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* Panel sections */
+.score-section {
+    background: linear-gradient(135deg, #4ef63b, #46d81d);
+    color: white;
+    text-align: center;
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.score-value {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.score-text {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.credits-section {
+    background: linear-gradient(135deg, #1013b9, #052e96);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.credits-value {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.credits-text {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.panel-section {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #1e293b;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.color-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    margin-right: 12px;
+}
+
+.good { background-color: #10b981; }
+.medium { background-color: #f59e0b; }
+.bad { background-color: #ef4444; }
+
+.leaderboard-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.leaderboard-item:last-child {
+    border-bottom: none;
+}
+
+.rank { font-weight: 600; width: 24px; }
+.name { flex: 1; }
+.score { font-weight: 600; color: #3b82f6; }
+
+.explanation {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #64748b;
+    text-align: center;
+}
+
+.footer {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 16px;
+    border-top: 1px solid #e2e8f0;
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* ===== NEW PATH COMPARISON STYLES ===== */
+.path-comparison-panel {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    max-width: 320px;
+}
+
+.path-comparison-panel h3 {
+    margin: 0 0 15px 0;
+    color: #1e293b;
+    font-size: 16px;
+}
+
+.path-option {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+    padding: 10px;
+    border-radius: 6px;
+    background: #f8fafc;
+    border-left: 4px solid transparent;
+}
+
+.path-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    margin-right: 12px;
+    flex-shrink: 0;
+    border: 1px solid rgba(0,0,0,0.1); /* Added border for better visibility */
+}
+
+.path-info {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.4;
+}
+
+.path-info strong {
+    color: #1e293b;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.quality-legend {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    font-size: 12px;
+    color: #64748b;
+}
+
+/*.click-instructions {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    z-index: 1000;
+    font-size: 14px;
+    pointer-events: none;  Prevent interfering with map clicks 
+}*/
+
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.loading-spinner {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-weight: 600;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+}
+
+/* Z-index management to prevent conflicts */
+.map-controls { z-index: 1000; }
+.path-comparison-panel { z-index: 1001; } /* Ensure comparison panel is above controls */
+.route-info { z-index: 1000; }
+.click-instructions { z-index: 1000; }
+.loading-overlay { z-index: 2000; }
+
+/* Responsive*/
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: calc(100vh - 100px);
+        border-radius: 0;
+    }
+
+    .map-container {
+        flex: 2;
+    }
+
+    .info-panel {
+        flex: 1;
+        border-left: none;
+        border-top: 1px solid #e2e8f0;
+    }
+
+    .header {
+        padding: 0.8rem 1rem;
+    }
+
+    /* Mobile adjustments for new components */
+    .path-comparison-panel {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        max-width: none;
+        width: auto;
+    }
+
+    .map-controls {
+        top: auto;
+        bottom: 80px;
+        right: 10px;
+        width: 180px;
+    }
+
+    .click-instructions {
+        bottom: 10px;
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}
+
+.leaderboard-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    /* Max width: map width (70% of container) minus padding/margin */
+    width: calc(75%); /* 70% = map portion, 40px = left+right padding */
+    /*max-width: 1000px;  cap on large screens */
+    max-height: 25%;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 16px;
+    z-index: 999; /* below map-controls (1000+) but above map */
+    overflow-y: auto;
+    font-size: 0.9rem;
+}
+
+.leaderboard-container .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #1e293b;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #007bff;
+}
+
+/* Header Row */
+.leaderboard-header {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 8px;
+    padding: 8px 0;
+    font-weight: bold;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 8px;
+}
+
+/* Data Rows */
+.leaderboard-item {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+.leaderboard-item:last-child {
+    border-bottom: none;
+}
+
+/* Column Styles */
+.leaderboard-item .rank,
+.leaderboard-header .rank {
+    text-align: center;
+    color: #007bff;
+}
+
+.leaderboard-item .boat-id,
+.leaderboard-header .boat-id {
+    font-weight: 500;
+}
+
+.leaderboard-item .strategy,
+.leaderboard-header .strategy {
+    font-style: italic;
+    color: #555;
+}
+
+.leaderboard-item .total-score,
+.leaderboard-header .total-score {
+    text-align: right;
+    font-weight: bold;
+}
+
+.leaderboard-item .total-distance,
+.leaderboard-header .total-distance {
+    text-align: right;
+}
+
+.leaderboard-item .average-ndwi,
+.leaderboard-header .average-ndwi {
+    text-align: right;
+}
+
+.leaderboard-item .steps-taken,
+.leaderboard-header .steps-taken {
+    text-align: center;
+}
+
+.leaderboard-item .finished,
+.leaderboard-header .finished {
+    text-align: center;
+    font-weight: bold;
+}
+
+.bottom-right-logo {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+    height: 25%;
+    z-index: 996; /* below map controls but above leaderboard/logo should be visible */
+    pointer-events: none; /* don’t block map interactions */
+    opacity: 0.85;
+    transition: opacity 0.2s;
+}
+
+.bottom-right-logo:hover {
+    opacity: 1;
+}
+
+.bottom-right-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+    /* Small mobile devices */
+    @media (max-width: 768px) {
+        .leaderboard-container {
+            width: calc(100% - 40px);
+            left: 20px;
+            bottom: 16px;
+            max-height: 180px;
+        }
+    }

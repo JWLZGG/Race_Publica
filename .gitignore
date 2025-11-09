@@ -10,3 +10,8 @@ out/
 node_modules/
 # Rust
 target/
+
+# Frontend ignores
+frontend/**/node_modules/
+frontend/**/.idea/
+frontend/**/dist/
