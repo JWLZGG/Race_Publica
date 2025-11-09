@@ -150,3 +150,20 @@ Data sources: Copernicus Sentinel-2/3, OSM waterways
 Output: gamified sustainability dashboard
 
 Value: transforms satellite data into a civic incentive engine
+
+
+### 🧩 Simulation Engine (Pavlo Sviatushenko)
+- Graph-based model of Berlin waterways (~75k nodes, 979k edges)
+- Simulates 3 navigation strategies:
+  - 🟢 *Greenest route* (max NDWI)
+  - 🔵 *Shortest route*
+  - 🔴 *Chaotic route*
+- Calculates scores, NDWI averages, and route rankings.
+- Notebook: [`notebooks/simulation_engine.ipynb`](notebooks/simulation_engine.ipynb)
+- Output visuals stored in [`screenshots/`](screenshots/)
+
+
+📄 **Full Simulation Notebook (with all outputs)**
+For reproducibility, the complete 135 MB notebook is archived here:
+https://drive.google.com/file/d/1t2Xd-vSUdSxlESOuQXcfBq7w6_mN4b6j/view?usp=sharing
+
